@@ -81,6 +81,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Refresh {
+            bindings = <&kp F5>;
+            key-positions = <4 5>;
+        };
+
+        Inventory {
+            bindings = <&kp I>;
+            key-positions = <28 29>;
+        };
+
+        Map {
+            bindings = <&kp M>;
+            key-positions = <40 41>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
