@@ -35,6 +35,22 @@
 
             tap-ms = <20>;
         };
+
+        One_Three_Zero: One_Three_Zero {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ONE_THREE_ZERO";
+            #binding-cells = <0>;
+            bindings = <&tog 1>, <&tog 3>, <&tog 0>;
+        };
+
+        Space_Ctrl: Space_Ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_CTRL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -69,7 +85,7 @@
         compatible = "zmk,keymap";
 
         Zero {
-            label = "0";
+            label = "Gaming";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -79,26 +95,26 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &kp N1    &kp N2  &kp N3        &kp N4     &kp N5     &kp N6      &kp N7  &kp N8        &kp N9          &kp N0             &kp BSPC
-&kp TAB     &kp Q     &kp W   &kp E         &kp R      &kp T      &kp Y       &kp U   &kp I         &kp O           &kp P              &kp ENTER
-&none       &kp A     &kp S   &kp D         &kp F      &kp G      &kp H       &kp J   &kp K         &kp L           &kp SEMI           &kp SQT
-&kp LSHFT   &kp Z     &kp X   &kp C         &kp V      &kp B      &kp N       &kp M   &kp COMMA     &kp DOT         &kp FSLH           &kp RALT
-&kp C_MUTE  &kp LGUI  &none   &kp LEFT_ALT  &kp LCTRL  &kp SPACE  &kp SPACE   &mo 3   &kp LEFT      &kp DOWN_ARROW  &kp RIGHT
-                                                                  &kp K_MUTE  &none   &kp C_VOL_UP  &none           &kp C_VOLUME_DOWN
+&kp ESC     &kp N1    &kp N2           &kp N3        &kp N4     &kp N5     &kp N6      &kp N7  &kp N8        &kp N9          &kp N0             &kp BSPC
+&kp TAB     &kp Q     &kp W            &kp E         &kp R      &kp T      &kp Y       &kp U   &kp I         &kp O           &kp P              &kp ENTER
+&mo 2       &kp A     &kp S            &kp D         &kp F      &kp G      &kp H       &kp J   &kp K         &kp L           &kp SEMI           &kp SQT
+&kp LSHFT   &kp Z     &kp X            &kp C         &kp V      &kp B      &kp N       &kp M   &kp COMMA     &kp DOT         &kp FSLH           &kp RALT
+&kp C_MUTE  &kp LGUI  &One_Three_Zero  &kp LEFT_ALT  &kp LCTRL  &kp SPACE  &kp SPACE   &mo 3   &kp LEFT      &kp DOWN_ARROW  &kp RIGHT
+                                                                           &kp K_MUTE  &none   &kp C_VOL_UP  &none           &kp C_VOLUME_DOWN
             >;
 
             sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
         };
 
         One {
-            label = "1";
+            label = "Work";
             bindings = <
-&kp ESC     &kp N1    &kp N2  &kp N3        &kp N4     &kp N5     &kp N6      &kp N7  &kp N8        &kp N9    &kp N0             &kp BSPC
-&kp TAB     &kp Q     &kp W   &kp E         &kp R      &kp T      &kp Y       &kp U   &kp I         &kp O     &kp P              &kp ENTER
-&none       &kp A     &kp S   &kp D         &kp F      &kp G      &kp H       &kp J   &kp K         &kp L     &kp SEMI           &kp SQT
-&kp LSHFT   &kp Z     &kp X   &kp C         &kp V      &kp B      &kp N       &kp M   &kp COMMA     &kp DOT   &kp FSLH           &kp RALT
-&kp C_MUTE  &kp LGUI  &none   &kp LEFT_ALT  &kp LCTRL  &kp SPACE  &kp SPACE   &mo 3   &kp RCTRL     &kp RALT  &kp RGUI
-                                                                  &kp K_MUTE  &none   &kp C_VOL_UP  &none     &kp C_VOLUME_DOWN
+&kp ESC     &kp N1    &kp N2           &kp N3        &kp N4                   &kp N5     &kp N6      &kp N7  &kp N8        &kp N9    &kp N0             &kp BSPC
+&kp TAB     &kp Q     &kp W            &kp E         &kp R                    &kp T      &kp Y       &kp U   &kp I         &kp O     &kp P              &kp ENTER
+&mo 4       &kp A     &kp S            &kp D         &kp F                    &kp G      &kp H       &kp J   &kp K         &kp L     &kp SEMI           &kp SQT
+&kp LSHFT   &kp Z     &kp X            &kp C         &kp V                    &kp B      &kp N       &kp M   &kp COMMA     &kp DOT   &kp FSLH           &kp RALT
+&kp C_MUTE  &kp LGUI  &One_Three_Zero  &kp LEFT_ALT  &Space_Ctrl LCTRL SPACE  &kp SPACE  &kp SPACE   &mo 3   &kp RCTRL     &kp RALT  &kp RGUI
+                                                                                         &kp K_MUTE  &none   &kp C_VOL_UP  &none     &kp C_VOLUME_DOWN
             >;
 
             sensor-bindings = <&mousescroll>, <&inc_dec_kp PG_UP PG_DN>;
