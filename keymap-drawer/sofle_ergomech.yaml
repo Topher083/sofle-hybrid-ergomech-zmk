@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: sofle_ergomech}
 layers:
-  Gaming: [ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BSPC, TAB, Q, W, E, R, T, Y, U, I, O, P, ENTER, '2', A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
-    Z, X, C, V, B, N, M, ',', ., /, RALT, MUTE, LGUI, '&One_Three_Zero', LEFT ALT, LCTRL, SPACE, SPACE, '3', LEFT, DOWN ARROW, RIGHT, MUTE, '', VOL UP, '', VOLUME
+  Gaming: [ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BSPC, TAB, Q, W, E, R, T, Y, U, I, O, P, ENTER, Numpad, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
+    Z, X, C, V, B, N, M, ',', ., /, RALT, MUTE, LGUI, '&One_Three_Zero', LEFT ALT, LCTRL, SPACE, SPACE, F Keys, LEFT, DOWN ARROW, RIGHT, MUTE, '', VOL UP, '', VOLUME
       DOWN]
   Work:
   - ESC
@@ -59,16 +59,16 @@ layers:
   - {t: SPACE, h: LCTRL}
   - SPACE
   - SPACE
-  - '3'
-  - RCTRL
-  - RALT
-  - RGUI
+  - F Keys
+  - LEFT
+  - DOWN
+  - RIGHT
   - MUTE
   - ''
   - VOL UP
   - ''
   - VOLUME DOWN
-  '2':
+  Numpad:
   - '`'
   - ''
   - ''
@@ -133,7 +133,7 @@ layers:
   - ''
   - ''
   - ''
-  '3':
+  F Keys:
   - ''
   - F1
   - F2
